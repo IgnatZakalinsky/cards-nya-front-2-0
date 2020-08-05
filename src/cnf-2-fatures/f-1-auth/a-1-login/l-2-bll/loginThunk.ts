@@ -23,6 +23,6 @@ export const signIn = (
             DEV_VERSION && console.log('Nya, Login Success!', data);
         },
         (e) => dispatch(LoginActions.setError(e)),
-        "Login"
+        "Login",
     );
 };
