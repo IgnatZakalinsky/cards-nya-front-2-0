@@ -4,10 +4,11 @@ import {LoginActions, LoginActionsType} from "./LoginActions";
 import {ExtraArgumentNya, ReturnVoid, tryCatch} from "../../../../cnf-1-main/m-2-bll/thunks";
 import {LoginAPI} from "../l-3-dal/LoginAPI";
 import {DEV_VERSION} from "../../../../config";
+import {ProfileActions, ProfileActionsType} from "../../a-7-profile/p-2-bll/ProfileActions";
 
 export const signIn = (
     email: string, password: string, rememberMe: boolean
-): ThunkAction<ReturnVoid, AppStoreType, ExtraArgumentNya, LoginActionsType> => async (
+): ThunkAction<ReturnVoid, AppStoreType, ExtraArgumentNya, LoginActionsType | ProfileActionsType> => async (
     dispatch,
     // getStore: GetAppStoreType
 ) => {
@@ -18,7 +19,7 @@ export const signIn = (
             const data = await LoginAPI.signIn(email, password, rememberMe);
 
             dispatch(LoginActions.setSuccess(true));
-            // dispatch(ProfileActions.setUser(data));
+            dispatch(ProfileActions.setUser(data));
 
             DEV_VERSION && console.log('Nya, Login Success!', data);
         },

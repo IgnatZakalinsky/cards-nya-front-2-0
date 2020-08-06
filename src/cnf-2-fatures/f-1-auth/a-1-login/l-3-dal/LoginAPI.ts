@@ -1,19 +1,5 @@
 import {instance} from "../../../../cnf-1-main/m-3-dal/instance";
-
-export type UserType = {
-    _id: string;
-    email: string;
-    name: string;
-    avatar: string;
-    publicCardPacksCount: number;
-
-    created: Date;
-    updated: Date;
-    isAdmin: boolean;
-    verified: boolean;
-    rememberMe: boolean;
-}
-
+import {UserType} from "../../a-7-profile/p-2-bll/ProfileInitState";
 
 export type SignInDataType = UserType & { error: string; };
 
