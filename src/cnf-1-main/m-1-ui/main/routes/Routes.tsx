@@ -5,16 +5,16 @@ import {DEV_VERSION} from "../../../../config";
 
 const mappedRoutes = pages.map((p: PageType) => (
     <Route
-        key={'route-' + p.id}
-        path={p.path && (p.path + (p.params || ''))}
+        key={"route-" + p._id}
+        path={p.path && (p.path + (p.params || ""))}
         exact={p.exact}
-        render={p.page}
+        render={() => p.page}
     />
 ));
 
 const Routes = () => {
 
-    DEV_VERSION && console.log('render Routes');
+    DEV_VERSION && console.log("render Routes");
     return (
         <Switch>
             {mappedRoutes}

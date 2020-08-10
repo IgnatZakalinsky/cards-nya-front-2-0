@@ -14,9 +14,9 @@ export const tryCatch = async (
         await logic();
 
     } catch (e) {
-        const error = e.response ? e.response.data.error : (e.message + ', more details in the console');
+        const error = e.response ? e.response.data.error : (e.message + ", more details in the console");
         setError(error);
 
-        DEV_VERSION && console.log('Nya, ' + info + ' Error!', {...e})
+        DEV_VERSION && console.log("Nya, " + info + " Error!", {...e})
     }
 };

@@ -6,7 +6,7 @@ import {DEV_VERSION} from "../../../config";
 // headers, routes, footers
 const Main = () => {
 
-    DEV_VERSION && console.log('render Main');
+    DEV_VERSION && console.log("render Main");
     return (
         <>
             {DEV_VERSION && <DevHeader/>}

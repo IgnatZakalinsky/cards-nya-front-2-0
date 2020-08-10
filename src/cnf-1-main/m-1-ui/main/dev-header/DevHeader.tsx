@@ -5,9 +5,9 @@ import {DEV_VERSION} from "../../../../config";
 
 const mappedLinks = pages.map(p => (
     <LinkNya
-        key={'navLink-' + p.id}
-        to={(p.path || '') + (p.params ? '/1' : '')}
-        info={'navLink-' + p.id}
+        key={"navLink-" + p._id}
+        to={(p.path || '') + (p.params ? "/1" : "")}
+        info={"navLink-" + p._id}
     >
         {p.title}
     </LinkNya>
@@ -15,7 +15,7 @@ const mappedLinks = pages.map(p => (
 
 const DevHeader = () => {
 
-    DEV_VERSION && console.log('render DevHeader');
+    DEV_VERSION && console.log("render DevHeader");
     return (
         <>
             {mappedLinks}
