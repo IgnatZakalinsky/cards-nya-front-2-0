@@ -3,6 +3,7 @@ import {RouteComponentProps} from "react-router-dom";
 import LoginPage from "../../../../cnf-2-fatures/f-1-auth/a-1-login/l-1-ui/LoginPage";
 import RegisterPage from "../../../../cnf-2-fatures/f-1-auth/a-2-register/r-1-ui/RegisterPage";
 import ProfilePage from "../../../../cnf-2-fatures/f-1-auth/a-7-profile/p-1-ui/ProfilePage";
+import AuthRedirectPage from "../../../../cnf-0-common/c-1-ui/redirect/AuthRedirectPage";
 // import PacksPage from "../../../../cnf-2-fatures/f-2-cards/c-1-packs/p-1-ui/PacksPage";
 // import CardsPage from "../../../../cnf-2-fatures/f-2-cards/c-2-cards/c-1-ui/CardsPage";
 // import LearnPage from "../../../../cnf-2-fatures/f-3-learn/l-1-ui/LearnPage";
@@ -34,7 +35,10 @@ export const pages: PageType[] = [
     //     id: 2, title: 'profile', path: PATH.PROFILE, params: '/:id', exact: true,
     //     page: (p) => <div>{p.match.params.id}</div>
     // },
-    {id: 2, title: 'profile', path: PATH.PROFILE, exact: true, page: () => <ProfilePage/>},
+    {
+        id: 2, title: 'profile', path: PATH.PROFILE, exact: true,
+        page: () => <AuthRedirectPage><ProfilePage/></AuthRedirectPage>
+    },
     // {id: 3, title: 'packs', path: PATH.PACKS, exact: true, page: () => <PacksPage/>},
     // {id: 4, title: 'cards', path: PATH.CARDS, params: '/:id', exact: true, page: () => <CardsPage/>},
     // {id: 5, title: 'learn', path: PATH.LEARN, params: '/:id', exact: true, page: () => <LearnPage/>},

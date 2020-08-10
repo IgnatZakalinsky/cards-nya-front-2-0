@@ -21,8 +21,7 @@ const ProfilePage = () => {
     return (
         <div>
             ProfilePage
-            <div>{user.name}</div>
-            <div>xy</div>sdfsdfs
+            <div>name: {user.name}</div>
             <div>
                 <ButtonNya onClick={update}>set name</ButtonNya>
                 <ButtonNya onClick={get}>get users</ButtonNya>
