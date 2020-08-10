@@ -17,7 +17,7 @@ const LoginPage = () => {
     const dispatch = useDispatch();
     useEffect(() => {
         if (first) {
-            if (success || error) dispatch(LoginActions.setError(''));
+            if (success || error) dispatch(LoginActions.setError(""));
 
             setFirst(false);
         } else {
@@ -26,14 +26,14 @@ const LoginPage = () => {
         }
     }, [first, success, error, dispatch, setFirst, redirect, setRedirect]);
 
-    DEV_VERSION && console.log('render LoginPage');
+    DEV_VERSION && console.log("render LoginPage");
     if (redirect && success && !first) return <Redirect to={PATH.PROFILE}/>;
     return (
         <div>
             login
             <LoginStatus first={first}/>
             <LoginContainer/>
-            <LinkNya to={PATH.REGISTER} info={'register in login'}>register</LinkNya>
+            <LinkNya to={PATH.REGISTER} info={"register in login"}>register</LinkNya>
         </div>
     );
 };

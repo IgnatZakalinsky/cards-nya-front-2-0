@@ -12,7 +12,7 @@ const ButtonNya: React.FC<ButtonNyaPropsType> = React.memo((
     }
 ) => {
 
-    DEV_VERSION && info && console.log('render ButtonNya-' + info);
+    DEV_VERSION && info && console.log("render ButtonNya-" + info);
     return <button className={s.buttonNya} {...props}/>;
 });
 

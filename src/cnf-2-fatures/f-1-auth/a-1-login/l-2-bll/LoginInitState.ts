@@ -7,5 +7,5 @@ export type LoginStateType = {
 export const loginInitState: LoginStateType = {
     loading: false,
     success: false,
-    error: '',
+    error: "",
 };

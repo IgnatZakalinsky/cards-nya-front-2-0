@@ -21,7 +21,7 @@ export const signIn = (
             dispatch(LoginActions.setSuccess(true));
             dispatch(ProfileActions.setUser(data));
 
-            DEV_VERSION && console.log('Nya, Login Success!', data);
+            DEV_VERSION && console.log("Nya, Login Success!", data);
         },
         (e) => dispatch(LoginActions.setError(e)),
         "Login",

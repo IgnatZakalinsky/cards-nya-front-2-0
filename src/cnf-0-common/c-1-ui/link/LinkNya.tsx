@@ -12,7 +12,7 @@ const LinkNya: React.FC<LinkNyaPropsType> = React.memo((
     }
 ) => {
 
-    DEV_VERSION && info && console.log('render LinkNya-' + info);
+    DEV_VERSION && info && console.log("render LinkNya-" + info);
     return <NavLink className={s.link} {...props}/>;
 });
 

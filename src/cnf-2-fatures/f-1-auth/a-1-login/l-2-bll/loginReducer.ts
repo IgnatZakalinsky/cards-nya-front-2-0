@@ -3,7 +3,7 @@ import {LoginActionsType} from "./LoginActions";
 
 export const loginReducer = (state = loginInitState, action: LoginActionsType): LoginStateType => {
     switch (action.type) {
-        case 'login/SET_ERROR': {
+        case "login/SET_ERROR": {
             return {
                 ...state,
                 error: action.error,
@@ -11,7 +11,7 @@ export const loginReducer = (state = loginInitState, action: LoginActionsType): 
                 success: false,
             }
         }
-        case 'login/SET_LOADING': {
+        case "login/SET_LOADING": {
             return {
                 ...state,
                 error: '',
@@ -19,7 +19,7 @@ export const loginReducer = (state = loginInitState, action: LoginActionsType): 
                 success: false,
             }
         }
-        case 'login/SET_SUCCESS': {
+        case "login/SET_SUCCESS": {
             return {
                 ...state,
                 error: '',
