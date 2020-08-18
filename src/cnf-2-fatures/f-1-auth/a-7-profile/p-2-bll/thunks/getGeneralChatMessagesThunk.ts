@@ -20,7 +20,7 @@ export const getGeneralChatMessages =
                 // dispatch(nekoSetName(data.name));
                 dispatch(ProfileActions.setSuccess(true));
 
-                DEV_VERSION && console.log("Nya, getGeneralChatMessages Success!", data)
+                DEV_VERSION && console.log("Nya, getGeneralChatMessages Success!", data);
             },
             (e) => dispatch(ProfileActions.setError(e)),
             "getGeneralChatMessages",

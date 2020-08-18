@@ -4,8 +4,9 @@ import {ExtraArgumentNya, ReturnVoid, tryCatch} from "../../../../../cnf-1-main/
 import {DEV_VERSION} from "../../../../../config";
 import {ProfileActions, ProfileActionsType} from "../ProfileActions";
 import {ProfileAPI} from "../../p-3-dal/ProfileAPI";
+import {FakeUser} from "../ProfileInitState";
 
-export const getUsers = (): ThunkAction<ReturnVoid, AppStoreType, ExtraArgumentNya, ProfileActionsType> => async (
+export const logOut = (): ThunkAction<ReturnVoid, AppStoreType, ExtraArgumentNya, ProfileActionsType> => async (
     dispatch,
     // getStore: GetAppStoreType
 ) => {
@@ -14,14 +15,14 @@ export const getUsers = (): ThunkAction<ReturnVoid, AppStoreType, ExtraArgumentN
     await tryCatch(
         async () => {
 
-            const data = await ProfileAPI.getUsers();
+            const data = await ProfileAPI.logOut();
 
-            // dispatch(nekoSetName(data.name));
+            dispatch(ProfileActions.setUser(FakeUser));
             dispatch(ProfileActions.setSuccess(true));
 
-            DEV_VERSION && console.log("Nya, getUsers Success!", data);
+            DEV_VERSION && console.log("Nya, logOut Success!", data);
         },
         (e) => dispatch(ProfileActions.setError(e)),
-        "getUsers",
+        "logOut",
     );
 };

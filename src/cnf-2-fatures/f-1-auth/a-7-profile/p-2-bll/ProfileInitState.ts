@@ -10,7 +10,21 @@ export type UserType = {
     isAdmin: boolean;
     verified: boolean;
     rememberMe: boolean;
-}
+};
+
+export const FakeUser = {
+    _id: "0",
+    email: "fake",
+    name: "fake",
+    // avatar?: string;
+    publicCardPacksCount: 0,
+
+    created: new Date(),
+    updated: new Date(),
+    isAdmin: false,
+    verified: false,
+    rememberMe: false
+};
 
 export type ProfileStateType = {
     loading: boolean;
@@ -18,24 +32,12 @@ export type ProfileStateType = {
     error: string;
 
     user: UserType
-}
+};
 
 export const ProfileInitState: ProfileStateType = {
     loading: false,
     success: false,
     error: "",
 
-    user: {
-        _id: "0",
-        email: "fake",
-        name: "fake",
-        // avatar?: string;
-        publicCardPacksCount: 0,
-
-        created: new Date(),
-        updated: new Date(),
-        isAdmin: false,
-        verified: false,
-        rememberMe: false
-    }
+    user: FakeUser,
 };

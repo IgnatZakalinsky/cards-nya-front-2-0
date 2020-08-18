@@ -21,7 +21,7 @@ export const updateUser = (
             dispatch(ProfileActions.setUser(data.updatedUser));
             dispatch(ProfileActions.setSuccess(true));
 
-            DEV_VERSION && console.log("Nya, updateUser Success!", data)
+            DEV_VERSION && console.log("Nya, updateUser Success!", data);
         },
         (e) => dispatch(ProfileActions.setError(e)),
         "updateUser",

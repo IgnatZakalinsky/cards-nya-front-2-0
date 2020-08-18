@@ -2,6 +2,7 @@ import {instance} from "../../../../cnf-1-main/m-3-dal/instance";
 import {UserType} from "../p-2-bll/ProfileInitState";
 
 export type GetMeDataType = UserType & { error: string; };
+export type logOutDataType = { error: string; };
 export type UpdateUserDataType = {
     updatedUser: UserType;
     error: string;
@@ -19,6 +20,13 @@ export const ProfileAPI = {
 
         return response.data;
     },
+    logOut: async () => {
+        const response = await instance.delete<logOutDataType>("/auth/me");
+
+        return response.data;
+    },
+
+
     getUsers: async () => {
         const response = await instance.get<any>("/social/users");
 

@@ -20,7 +20,7 @@ export const sendGeneralChatMessage =
                 // dispatch(nekoSetName(data.name));
                 dispatch(ProfileActions.setSuccess(true));
 
-                DEV_VERSION && console.log("Nya, sendGeneralChatMessage Success!", data)
+                DEV_VERSION && console.log("Nya, sendGeneralChatMessage Success!", data);
             },
             (e) => dispatch(ProfileActions.setError(e)),
             "sendGeneralChatMessage",

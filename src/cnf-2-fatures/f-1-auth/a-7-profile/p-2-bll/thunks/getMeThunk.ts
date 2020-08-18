@@ -19,7 +19,7 @@ export const getMe = (): ThunkAction<ReturnVoid, AppStoreType, ExtraArgumentNya,
             dispatch(ProfileActions.setUser(data));
             dispatch(ProfileActions.setSuccess(true));
 
-            DEV_VERSION && console.log("Nya, getMe Success!", data)
+            DEV_VERSION && console.log("Nya, getMe Success!", data);
         },
         (e) => dispatch(ProfileActions.setError(e)),
         "getMe",

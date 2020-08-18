@@ -31,7 +31,7 @@ const AuthRedirectPage: React.FC<AuthRedirectPagePropsType> = React.memo((
             }
             setFirstRendering(false); // + rerender
         } else {
-            if (error && !redirect && spin) {
+            if (!redirect && ((spin && error) || (!spin && user._id === "0"))) {
                 setTimeout(() => setRedirect(true), 1500);
             }
             if (success && spin) setSpin(false);
