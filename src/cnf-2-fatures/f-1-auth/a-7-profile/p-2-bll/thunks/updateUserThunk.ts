@@ -18,7 +18,7 @@ export const updateUser = (
 
             const data = await ProfileAPI.updateUser(name, avatar);
 
-            // dispatch(nekoSetName(data.name));
+            dispatch(ProfileActions.setUser(data.updatedUser));
             dispatch(ProfileActions.setSuccess(true));
 
             DEV_VERSION && console.log("Nya, updateUser Success!", data)

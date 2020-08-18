@@ -16,7 +16,7 @@ const ProfileContainer = () => {
     DEV_VERSION && console.log("render ProfileContainer");
     return (
         <div>
-            <img src={user.avatar} alt={"avatar"} height={500}/>
+            <img src={avatar} alt={"avatar"} height={"200px"}/>
             <div>
                 avatar url: <EditableSpanNya value={avatar} onChangeText={setAvatar} onBlur={update}/>
             </div>

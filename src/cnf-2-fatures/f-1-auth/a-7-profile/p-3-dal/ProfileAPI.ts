@@ -2,6 +2,10 @@ import {instance} from "../../../../cnf-1-main/m-3-dal/instance";
 import {UserType} from "../p-2-bll/ProfileInitState";
 
 export type GetMeDataType = UserType & { error: string; };
+export type UpdateUserDataType = {
+    updatedUser: UserType;
+    error: string;
+};
 
 export const ProfileAPI = {
     getMe: async () => {
@@ -11,7 +15,7 @@ export const ProfileAPI = {
     },
 
     updateUser: async (name: string, avatar: string) => {
-        const response = await instance.put<any>("/auth/me", {name, avatar});
+        const response = await instance.put<UpdateUserDataType>("/auth/me", {name, avatar});
 
         return response.data;
     },
