@@ -15,7 +15,7 @@ export const registerReducer =
             case "register/SET_LOADING": {
                 return {
                     ...state,
-                    error: '',
+                    error: "",
                     loading: action.loading,
                     success: false,
                 }
@@ -23,7 +23,7 @@ export const registerReducer =
             case "register/SET_SUCCESS": {
                 return {
                     ...state,
-                    error: '',
+                    error: "",
                     loading: false,
                     success: action.success,
                 }

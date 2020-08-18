@@ -7,5 +7,5 @@ export type RegisterStateType = {
 export const RegisterInitState: RegisterStateType = {
     loading: false,
     success: false,
-    error: '',
+    error: "",
 };

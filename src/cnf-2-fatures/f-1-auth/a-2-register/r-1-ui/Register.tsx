@@ -1,15 +1,15 @@
-import React, {ChangeEvent} from "react";
+import React from "react";
 import InputNya from "../../../../cnf-0-common/c-1-ui/input/InputNya";
 import ButtonNya from "../../../../cnf-0-common/c-1-ui/button/ButtonNya";
 import {DEV_VERSION} from "../../../../config";
 
 type RegisterPropsType = {
     email: string;
-    setEmail: (email: ChangeEvent<HTMLInputElement>) => void;
+    setEmail: (email: string) => void;
     pass: string;
-    setPass: (pass: ChangeEvent<HTMLInputElement>) => void;
+    setPass: (pass: string) => void;
     pass2: string;
-    setPass2: (pass2: ChangeEvent<HTMLInputElement>) => void;
+    setPass2: (pass2: string) => void;
 
     signUp: () => void;
     loading: boolean
@@ -19,13 +19,13 @@ const Register: React.FC<RegisterPropsType> = React.memo((
     {email, setEmail, pass, setPass, pass2, setPass2, signUp, loading}
 ) => {
 
-    DEV_VERSION && console.log('render Register');
+    DEV_VERSION && console.log("render Register");
     return (
         <>
-            <div><InputNya info={'email'} value={email} onChange={setEmail}/></div>
-            <div><InputNya info={'pass'} value={pass} onChange={setPass}/></div>
-            <div><InputNya info={'pass confirm'} value={pass2} onChange={setPass2}/></div>
-            <div><ButtonNya info={'sign up'} onClick={signUp} disabled={loading}>sign up</ButtonNya></div>
+            <div><InputNya info={"email"} value={email} onChangeText={setEmail}/></div>
+            <div><InputNya info={"pass"} value={pass} onChangeText={setPass}/></div>
+            <div><InputNya info={"pass confirm"} value={pass2} onChangeText={setPass2}/></div>
+            <div><ButtonNya info={"sign up"} onClick={signUp} disabled={loading}>sign up</ButtonNya></div>
         </>
     );
 });

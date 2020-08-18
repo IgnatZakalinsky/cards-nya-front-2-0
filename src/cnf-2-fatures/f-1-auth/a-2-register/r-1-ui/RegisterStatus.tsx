@@ -11,8 +11,8 @@ type RegisterStatusPropsType = {
 const RegisterStatus: React.FC<RegisterStatusPropsType> = React.memo(({first}) => {
     const {loading, success, error} = useSelector((store: AppStoreType) => store.register);
 
-    DEV_VERSION && console.log('render RegisterStatus');
-    return <Status loading={loading} success={success} error={error} info={'register'} first={first}/>
+    DEV_VERSION && console.log("render RegisterStatus");
+    return <Status loading={loading} success={success} error={error} info={"register"} first={first}/>
 });
 
 export default RegisterStatus;

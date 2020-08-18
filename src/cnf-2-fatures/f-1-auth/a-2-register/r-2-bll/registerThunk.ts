@@ -15,14 +15,14 @@ export const signUp = (
 
     await tryCatch(
         async () => {
-            if (password !== pass2) dispatch(RegisterActions.setError('Passwords don\'t match!'));
+            if (password !== pass2) dispatch(RegisterActions.setError("Passwords don't match!"));
             else {
 
                 const data = await RegisterAPI.signUp(email, password);
 
                 dispatch(RegisterActions.setSuccess(true));
 
-                DEV_VERSION && console.log('Nya, Register Success!', data);
+                DEV_VERSION && console.log("Nya, Register Success!", data);
             }
         },
         (e) => dispatch(RegisterActions.setError(e)),

@@ -1,4 +1,4 @@
-import React, {ChangeEvent, useCallback, useState} from "react";
+import React, {useCallback, useState} from "react";
 import Register from "./Register";
 import {useDispatch, useSelector} from "react-redux";
 import {signUp} from "../r-2-bll/registerThunk";
@@ -6,22 +6,9 @@ import {DEV_VERSION} from "../../../../config";
 import {AppStoreType} from "../../../../cnf-1-main/m-2-bll/store";
 
 const RegisterContainer = React.memo(() => {
-    const [email, setEmail] = useState<string>('');
-    const [pass, setPass] = useState<string>('');
-    const [pass2, setPass2] = useState<string>('');
-
-    const setEmailCallback = useCallback(
-        (e: ChangeEvent<HTMLInputElement>) => setEmail(e.currentTarget.value),
-        [setEmail]
-    );
-    const setPassCallback = useCallback(
-        (e: ChangeEvent<HTMLInputElement>) => setPass(e.currentTarget.value),
-        [setPass]
-    );
-    const setPassCallback2 = useCallback(
-        (e: ChangeEvent<HTMLInputElement>) => setPass2(e.currentTarget.value),
-        [setPass2]
-    );
+    const [email, setEmail] = useState<string>("");
+    const [pass, setPass] = useState<string>("");
+    const [pass2, setPass2] = useState<string>("");
 
     const dispatch = useDispatch();
     const signUpCallback = useCallback(
@@ -30,12 +17,12 @@ const RegisterContainer = React.memo(() => {
     );
     const {loading} = useSelector((store: AppStoreType) => store.register);
 
-    DEV_VERSION && console.log('render RegisterContainer');
+    DEV_VERSION && console.log("render RegisterContainer");
     return (
         <Register
-            email={email} setEmail={setEmailCallback}
-            pass={pass} setPass={setPassCallback}
-            pass2={pass2} setPass2={setPassCallback2}
+            email={email} setEmail={setEmail}
+            pass={pass} setPass={setPass}
+            pass2={pass2} setPass2={setPass2}
             signUp={signUpCallback}
             loading={loading}
         />

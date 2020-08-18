@@ -17,7 +17,7 @@ const RegisterPage = () => {
     const dispatch = useDispatch();
     useEffect(() => {
         if (first) {
-            if (error || success) dispatch(RegisterActions.setError(''));
+            if (error || success) dispatch(RegisterActions.setError(""));
 
             setFirst(false);
         } else {
@@ -26,14 +26,14 @@ const RegisterPage = () => {
         }
     }, [first, success, error, dispatch, setFirst, redirect, setRedirect]);
 
-    DEV_VERSION && console.log('render RegisterPage');
+    DEV_VERSION && console.log("render RegisterPage");
     if (redirect && success && !first) return <Redirect to={PATH.LOGIN}/>;
     return (
         <div>
             register
             <RegisterStatus first={first}/>
             <RegisterContainer/>
-            <LinkNya to={PATH.LOGIN} info={'login in register'}>login</LinkNya>
+            <LinkNya to={PATH.LOGIN} info={"login in register"}>login</LinkNya>
         </div>
     );
 };
