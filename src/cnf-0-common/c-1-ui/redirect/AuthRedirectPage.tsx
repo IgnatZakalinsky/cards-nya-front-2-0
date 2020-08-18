@@ -4,7 +4,7 @@ import {Redirect} from "react-router-dom";
 import {AppStoreType} from "../../../cnf-1-main/m-2-bll/store";
 import {PATH} from "../../../cnf-1-main/m-1-ui/main/routes/Pages";
 import {ProfileActions} from "../../../cnf-2-fatures/f-1-auth/a-7-profile/p-2-bll/ProfileActions";
-import {getMe} from "../../../cnf-2-fatures/f-1-auth/a-7-profile/p-2-bll/getMeThunk";
+import {getMe} from "../../../cnf-2-fatures/f-1-auth/a-7-profile/p-2-bll/thunks/getMeThunk";
 
 type DivPropsType = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
 
@@ -24,7 +24,7 @@ const AuthRedirectPage: React.FC<AuthRedirectPagePropsType> = React.memo((
     const dispatch = useDispatch();
     useEffect(() => {
         if (firstRendering) {
-            if (success || error) dispatch(ProfileActions.setError(''));
+            if (success || error) dispatch(ProfileActions.setError(""));
 
             if (user._id === "0") {
                 dispatch(getMe());

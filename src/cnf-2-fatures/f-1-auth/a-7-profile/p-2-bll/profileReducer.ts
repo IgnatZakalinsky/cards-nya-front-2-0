@@ -21,7 +21,7 @@ export const profileReducer =
             case "profile/SET_LOADING": {
                 return {
                     ...state,
-                    error: '',
+                    error: "",
                     loading: action.loading,
                     success: false,
                 }
@@ -29,7 +29,7 @@ export const profileReducer =
             case "profile/SET_SUCCESS": {
                 return {
                     ...state,
-                    error: '',
+                    error: "",
                     loading: false,
                     success: action.success,
                 }

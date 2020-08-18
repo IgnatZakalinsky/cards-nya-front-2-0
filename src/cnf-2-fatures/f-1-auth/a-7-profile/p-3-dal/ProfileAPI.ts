@@ -5,29 +5,29 @@ export type GetMeDataType = UserType & { error: string; };
 
 export const ProfileAPI = {
     getMe: async () => {
-        const response = await instance.post<GetMeDataType>('/auth/me');
+        const response = await instance.post<GetMeDataType>("/auth/me");
 
         return response.data;
     },
 
     updateUser: async (name: string, avatar: string) => {
-        const response = await instance.put<any>('/auth/me', {name, avatar});
+        const response = await instance.put<any>("/auth/me", {name, avatar});
 
         return response.data;
     },
     getUsers: async () => {
-        const response = await instance.get<any>(`/social/users`);
+        const response = await instance.get<any>("/social/users");
 
         return response.data;
     },
     sendGeneralChatMessage: async () => {
-        const response = await instance.post<any>('/social/general/message',
-            {message: 'some message'});
+        const response = await instance.post<any>("/social/general/message",
+            {message: "some message"});
 
         return response.data;
     },
     getGeneralChatMessages: async () => {
-        const response = await instance.get<any>(`/social/general/message`);
+        const response = await instance.get<any>("/social/general/message");
 
         return response.data;
     },

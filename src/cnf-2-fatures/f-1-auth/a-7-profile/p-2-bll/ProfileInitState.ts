@@ -23,12 +23,12 @@ export type ProfileStateType = {
 export const ProfileInitState: ProfileStateType = {
     loading: false,
     success: false,
-    error: '',
+    error: "",
 
     user: {
-        _id: '0',
-        email: 'fake',
-        name: 'fake',
+        _id: "0",
+        email: "fake",
+        name: "fake",
         // avatar?: string;
         publicCardPacksCount: 0,
 
