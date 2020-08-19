@@ -1,0 +1,34 @@
+import React, {useEffect, useState} from "react";
+import {DEV_VERSION} from "../../../../config";
+import {useDispatch, useSelector} from "react-redux";
+import {AppStoreType} from "../../../../cnf-1-main/m-2-bll/store";
+import {PATH} from "../../../../cnf-1-main/m-1-ui/main/routes/Pages";
+import LinkNya from "../../../../cnf-0-common/c-1-ui/link/LinkNya";
+
+const ForgotPage = () => {
+    const {success, error} = useSelector((store: AppStoreType) => store.forgot);
+    const [first, setFirst] = useState<boolean>(true);
+
+    const dispatch = useDispatch();
+    useEffect(() => {
+        if (first) {
+            // if (success || error) dispatch(LoginActions.setError(""));
+
+            setFirst(false);
+        } else {
+
+        }
+    }, [first, success, error, dispatch, setFirst]);
+
+    DEV_VERSION && console.log("render ForgotPage");
+    return (
+        <div>
+            forgot
+            {/*<LoginStatus first={first}/>*/}
+            {/*<LoginContainer/>*/}
+            <LinkNya to={PATH.LOGIN} info={"login in forgot"}>login</LinkNya>
+        </div>
+    );
+};
+
+export default ForgotPage;

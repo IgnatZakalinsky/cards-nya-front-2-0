@@ -6,7 +6,7 @@ import {DEV_VERSION} from "../../../../config";
 const mappedLinks = pages.map(p => (
     <LinkNya
         key={"navLink-" + p._id}
-        to={(p.path || '') + (p.params ? "/1" : "")}
+        to={(p.path || "/error404") + (p.params ? "/1" : "")}
         info={"navLink-" + p._id}
     >
         {p.title}
