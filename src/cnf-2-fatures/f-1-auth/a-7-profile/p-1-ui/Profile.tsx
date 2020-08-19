@@ -4,6 +4,7 @@ import EditableSpanNya from "../../../../cnf-0-common/c-1-ui/editableSpan/Editab
 import ButtonNya from "../../../../cnf-0-common/c-1-ui/button/ButtonNya";
 
 type ProfilePropsType = {
+    loading: boolean;
     avatar: string;
     setAvatar: (avatar: string) => void;
     name: string;
@@ -13,7 +14,7 @@ type ProfilePropsType = {
 };
 
 const Profile: React.FC<ProfilePropsType> = React.memo((
-    {avatar, setAvatar, name, setName, update, logOutCallback}
+    {loading, avatar, setAvatar, name, setName, update, logOutCallback}
 ) => {
 
     DEV_VERSION && console.log("render Profile");
@@ -21,12 +22,17 @@ const Profile: React.FC<ProfilePropsType> = React.memo((
         <div>
             <img src={avatar} alt={"avatar"} height={"200px"}/>
             <div>
-                avatar url: <EditableSpanNya value={avatar} onChangeText={setAvatar} onBlur={update}/>
+                avatar url: <EditableSpanNya
+                value={avatar}
+                onChangeText={setAvatar}
+                onBlur={update}
+                info={"avatar-url"}
+            />
             </div>
             <div>
-                name: <EditableSpanNya value={name} onChangeText={setName} onBlur={update}/>
+                name: <EditableSpanNya value={name} onChangeText={setName} onBlur={update} info={"name"}/>
             </div>
-            <ButtonNya onClick={logOutCallback}>LogOut</ButtonNya>
+            <ButtonNya onClick={logOutCallback} disabled={loading}>LogOut</ButtonNya>
         </div>
     );
 });
