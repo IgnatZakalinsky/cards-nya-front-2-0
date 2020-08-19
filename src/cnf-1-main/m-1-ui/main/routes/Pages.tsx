@@ -5,6 +5,7 @@ import ProfilePage from "../../../../cnf-2-fatures/f-1-auth/a-7-profile/p-1-ui/P
 import AuthRedirectPage from "../../../../cnf-0-common/c-1-ui/redirect/AuthRedirectPage";
 import { Redirect } from "react-router-dom";
 import ForgotPage from "../../../../cnf-2-fatures/f-1-auth/a-3-forgot/f-1-ui/ForgotPage";
+import SetPassPage from "../../../../cnf-2-fatures/f-1-auth/a-4-setPass/s-1-ui/SetPassPage";
 // import PacksPage from "../../../../cnf-2-fatures/f-2-cards/c-1-packs/p-1-ui/PacksPage";
 // import CardsPage from "../../../../cnf-2-fatures/f-2-cards/c-2-cards/c-1-ui/CardsPage";
 // import LearnPage from "../../../../cnf-2-fatures/f-3-learn/l-1-ui/LearnPage";
@@ -24,6 +25,7 @@ export const PATH = {
     REGISTER: "/register",
     PROFILE: "/profile",
     FORGOT: "/forgot",
+    SET_PASS: "/set-new-password",
     // PACKS: '/packs',
     // CARDS: '/cards',
     // LEARN: '/learn',
@@ -35,6 +37,7 @@ export const pages: PageType[] = [
     {_id: 1, title: "login", path: PATH.LOGIN, exact: true, page: <LoginPage/>},
     {_id: 2, title: "register", path: PATH.REGISTER, exact: true, page: <RegisterPage/>},
     {_id: 3, title: "forgot", path: PATH.FORGOT, exact: true, page: <ForgotPage/>},
+    {_id: 4, title: "setPass", path: PATH.SET_PASS, params: "/:token", exact: true, page: <SetPassPage/>},
     // {
     //     id: 7, title: 'profile', path: PATH.PROFILE, params: '/:id', exact: true,
     //     page: (p) => <div>{p.match.params.id}</div>
