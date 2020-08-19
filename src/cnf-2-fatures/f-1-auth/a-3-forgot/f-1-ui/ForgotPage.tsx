@@ -6,6 +6,7 @@ import {PATH} from "../../../../cnf-1-main/m-1-ui/main/routes/Pages";
 import LinkNya from "../../../../cnf-0-common/c-1-ui/link/LinkNya";
 import ForgotStatus from "./ForgotStatus";
 import ForgotContainer from "./ForgotContainer";
+import {ForgotActions} from "../f-2-bll/ForgotActions";
 
 const ForgotPage = () => {
     const {success, error} = useSelector((store: AppStoreType) => store.forgot);
@@ -14,7 +15,7 @@ const ForgotPage = () => {
     const dispatch = useDispatch();
     useEffect(() => {
         if (first) {
-            // if (success || error) dispatch(LoginActions.setError(""));
+            if (success || error) dispatch(ForgotActions.setError(""));
 
             setFirst(false);
         } else {
