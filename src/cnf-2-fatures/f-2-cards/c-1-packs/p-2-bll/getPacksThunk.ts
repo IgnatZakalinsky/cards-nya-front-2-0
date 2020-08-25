@@ -9,10 +9,8 @@ import {PacksActions, PacksActionsType} from "./PacksActions";
 export const getPacks = (): ThunkAction<ReturnVoid, AppStoreType, ExtraArgumentNya, ProfileActionsType | PacksActionsType> =>
     async (
         dispatch: ThunkDispatch<AppStoreType, ExtraArgumentNya, ProfileActionsType | PacksActionsType>,
-        getStore: GetAppStoreType
+        // getStore: GetAppStoreType
     ) => {
-        // nekoClear(dispatch);
-        // signInLoading(dispatch, true);
         // dispatch(RegisterActions.setLoading(true));
 
         await tryCatch(
@@ -20,21 +18,10 @@ export const getPacks = (): ThunkAction<ReturnVoid, AppStoreType, ExtraArgumentN
 
                 const data = await PacksAPI.getPacks();
 
-                if (data.error) {
-                    // dispatch(RegisterActions.setError(data.error));
+                // signInSuccess(dispatch, true);
+                dispatch(PacksActions.setPacks(data.cardPacks));
 
-                    DEV_VERSION && console.log('Nya, getPacks Error!', data);
-
-                } else {
-                    // setCookie('token', data.token, Math.floor(data.tokenDeathTime / 1000) - 180);
-
-                    // dispatch(nekoSetName(data.name));
-                    // signInSuccess(dispatch, true);
-                    dispatch(PacksActions.setPacks(data.cardPacks));
-                    // dispatch(ProfileActions.setToken(data.token));
-
-                    DEV_VERSION && console.log('Nya, getPacks Success!', data)
-                }
+                DEV_VERSION && console.log("Nya, getPacks Success!", data)
 
             },
             (e) => {
