@@ -16,13 +16,8 @@ const CardsContainer = React.memo(() => {
 
     const dispatch = useDispatch();
     useEffect(() => {
-        console.log('PacksContainer useEffect');
 
         dispatch(getCards(id));
-
-        return () => {
-            console.log('PacksContainer useEffect off');
-        }
     }, [dispatch, id]);
 
     const model: TableNyaModelType[] = cardsModel(
@@ -31,10 +26,10 @@ const CardsContainer = React.memo(() => {
         (card_id: string) => dispatch(updateCard(card_id, id)),
     );
 
-    DEV_VERSION && console.log('render CardsContainer, id:' + id);
+    DEV_VERSION && console.log("render CardsContainer, id:" + id);
     return (
         <div>
-            <TableNya model={model} data={cards} title={'Cards'}/>
+            <TableNya model={model} data={cards} title={"Cards"}/>
         </div>
     )
 });

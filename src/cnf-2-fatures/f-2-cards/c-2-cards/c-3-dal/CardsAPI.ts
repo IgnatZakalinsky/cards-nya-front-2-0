@@ -1,24 +1,25 @@
 import {instance} from "../../../../cnf-1-main/m-3-dal/instance";
 import {CardType} from "../c-2-bll/CardsInitState";
 
-export type DataType = {
+export type GetDataType = {
     cards: CardType[];
-
-    success: boolean;
-
-    token: string;
 
     error: string;
 }
 
 export const CardsAPI = {
-    getCards: async (token: string, cardsPack_id: string) => {
-        const response = await instance.get<DataType>(`/cards/card?token=${token}&cardsPack_id=${cardsPack_id}`);
+    getCards: async (cardsPack_id: string) => {
+        const response = await instance.get<GetDataType>(`/cards/card?cardsPack_id=${cardsPack_id}`
+        // + "&pageCount=2"
+        // + "&cardQuestion=ne"
+        // + "&min=2"
+        // + "&max=3"
+        );
 
         return response.data;
     },
     addCard: async (token: string, cardsPack_id: string) => {
-        const response = await instance.post<DataType>(`/cards/card`, {
+        const response = await instance.post<any>(`/cards/card`, {
             token,
             card: {
                 cardsPack_id,
@@ -31,7 +32,7 @@ export const CardsAPI = {
         return response.data;
     },
     updateCard: async (token: string, id: string) => {
-        const response = await instance.put<DataType>(`/cards/card`, {
+        const response = await instance.put<any>(`/cards/card`, {
             token,
             card: {
                 _id: id,
@@ -43,7 +44,7 @@ export const CardsAPI = {
         return response.data;
     },
     deleteCard: async (token: string, id: string) => {
-        const response = await instance.delete<DataType>(`/cards/card?token=${token}&id=${id}`);
+        const response = await instance.delete<any>(`/cards/card?token=${token}&id=${id}`);
 
         return response.data;
     },

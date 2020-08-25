@@ -9,35 +9,19 @@ import {CardsActions, CardsActionsType} from "./CardsActions";
 export const getCards = (id: string): ThunkAction<ReturnVoid, AppStoreType, ExtraArgumentNya, ProfileActionsType | CardsActionsType> =>
     async (
         dispatch: ThunkDispatch<AppStoreType, ExtraArgumentNya, ProfileActionsType | CardsActionsType>,
-        getStore: GetAppStoreType
+        // getStore: GetAppStoreType
     ) => {
-        // nekoClear(dispatch);
-        // signInLoading(dispatch, true);
         // dispatch(RegisterActions.setLoading(true));
-
-        const token= "";
 
         await tryCatch(
             async () => {
 
-                const data = await CardsAPI.getCards(token, id);
+                const data = await CardsAPI.getCards(id);
 
-                if (data.error) {
-                    // dispatch(RegisterActions.setError(data.error));
+                // signInSuccess(dispatch, true);
+                dispatch(CardsActions.setCards(data.cards));
 
-                    DEV_VERSION && console.log('Nya, getCards Error!', data);
-
-                } else {
-                    // setCookie('token', data.token, Math.floor(data.tokenDeathTime / 1000) - 180);
-
-                    // dispatch(nekoSetName(data.name));
-                    // signInSuccess(dispatch, true);
-                    dispatch(CardsActions.setCards(data.cards));
-                    // dispatch(ProfileActions.setToken(data.token));
-
-                    DEV_VERSION && console.log('Nya, getCards Success!', data)
-                }
-
+                DEV_VERSION && console.log("Nya, getCards Success!", data)
             },
             (e) => {
                 // dispatch(RegisterActions.setError(e))

@@ -7,7 +7,7 @@ import {Redirect} from "react-router-dom";
 import ForgotPage from "../../../../cnf-2-fatures/f-1-auth/a-3-forgot/f-1-ui/ForgotPage";
 import SetPassPage from "../../../../cnf-2-fatures/f-1-auth/a-4-setPass/s-1-ui/SetPassPage";
 import PacksPage from "../../../../cnf-2-fatures/f-2-cards/c-1-packs/p-1-ui/PacksPage";
-// import CardsPage from "../../../../cnf-2-fatures/f-2-cards/c-2-cards/c-1-ui/CardsPage";
+import CardsPage from "../../../../cnf-2-fatures/f-2-cards/c-2-cards/c-1-ui/CardsPage";
 // import LearnPage from "../../../../cnf-2-fatures/f-3-learn/l-1-ui/LearnPage";
 // import TestPage from "../../../../cnf-2-fatures/f-4-file/f-1-ui/TestPage";
 
@@ -27,7 +27,7 @@ export const PATH = {
     FORGOT: "/forgot",
     SET_PASS: "/set-new-password",
     PACKS: "/packs",
-    // CARDS: '/cards',
+    CARDS: "/cards",
     // LEARN: '/learn',
     // TEST: '/text',
 };
@@ -50,7 +50,10 @@ export const pages: PageType[] = [
         _id: 8, title: "packs", path: PATH.PACKS, exact: true,
         page: <AuthRedirectPage><PacksPage/></AuthRedirectPage>
     },
-    // {id: 9, title: 'cards', path: PATH.CARDS, params: '/:id', exact: true, page: () => <CardsPage/>},
+    {
+        _id: 9, title: "cards", path: PATH.CARDS, params: "/:id", exact: true,
+        page: <AuthRedirectPage><CardsPage/></AuthRedirectPage>
+    },
     // {id: 10, title: 'learn', path: PATH.LEARN, params: '/:id', exact: true, page: () => <LearnPage/>},
     // {id: 11, title: 'test', path: PATH.TEST, exact: true, page: () => <TestPage/>},
 

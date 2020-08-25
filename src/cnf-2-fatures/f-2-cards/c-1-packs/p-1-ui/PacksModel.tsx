@@ -42,6 +42,16 @@ export const packsModel = (
     },
     {
         title: (index, loading) => (
+            <div key={"url-title-" + index} style={{width: 150}}>url</div>
+        ),
+        render: (dataItem: PackType, modelIndex, dataIndex, loading) => (
+            <div key={"url-cell-" + dataItem._id} style={{width: 150}}>
+                {dataItem.deckCover}
+            </div>
+        )
+    },
+    {
+        title: (index, loading) => (
             <div key={"buttons-title-" + index} style={{width: 150}}>
                 <ButtonNya onClick={add}>add</ButtonNya>
             </div>
@@ -50,7 +60,7 @@ export const packsModel = (
             <div key={"buttons-cell-" + dataItem._id} style={{width: 250}}>
                 <ButtonNya onClick={() => del(dataItem._id)}>del</ButtonNya>
                 <ButtonNya onClick={() => update(dataItem._id)}>update</ButtonNya>
-                {/*<LinkNya to={PATH.CARDS + '/' + dataItem._id}>cards</LinkNya>*/}
+                <LinkNya to={PATH.CARDS + "/" + dataItem._id}>cards</LinkNya>
                 {/*<LinkNya to={PATH.LEARN + '/' + dataItem._id}>learn</LinkNya>*/}
             </div>
         )

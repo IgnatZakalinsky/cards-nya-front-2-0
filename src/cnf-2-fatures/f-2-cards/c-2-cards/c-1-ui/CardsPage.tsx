@@ -4,7 +4,7 @@ import CardsContainer from "./CardsContainer";
 
 const CardsPage = () => {
 
-    DEV_VERSION && console.log('render CardsPage');
+    DEV_VERSION && console.log("render CardsPage");
     return (
         <div>
             PacksPage
