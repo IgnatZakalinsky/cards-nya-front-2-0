@@ -15,6 +15,9 @@ export const PacksAPI = {
             + `&page=4`
             + `&user_id=5eecf82a3ed8f700042f1186`
             // + `&packName=o`
+            // + `&min=2`
+            // + `&max=2`
+            + `&sortPacks=0cardsCount`
         );
 
         return response.data;
@@ -39,8 +42,8 @@ export const PacksAPI = {
 
         return response.data;
     },
-    deletePack: async (token: string, id: string) => {
-        const response = await instance.delete<any>(`/cards/pack?token=${token}&id=${id}`);
+    deletePack: async (id: string) => {
+        const response = await instance.delete<any>(`/cards/pack?id=${id}`);
 
         return response.data;
     },
