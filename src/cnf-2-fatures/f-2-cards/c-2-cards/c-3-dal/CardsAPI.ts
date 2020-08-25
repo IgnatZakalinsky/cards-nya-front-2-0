@@ -30,13 +30,12 @@ export const CardsAPI = {
 
         return response.data;
     },
-    updateCard: async (token: string, id: string) => {
-        const response = await instance.put<any>(`/cards/card`, {
-            token,
+    updateCard: async (id: string) => {
+        const response = await instance.put<any>("/cards/card", {
             card: {
                 _id: id,
-                question: 'updated question',
-                answerImg: 'some answer img'
+                question: "updated question",
+                answerImg: "some answer img"
             }
         });
 

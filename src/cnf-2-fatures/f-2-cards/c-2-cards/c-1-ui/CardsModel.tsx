@@ -60,7 +60,7 @@ export const cardsModel = (
                 <div>{dataItem.answerVideo}</div>
                 <div>{dataItem.questionImg}</div>
                 <div>{dataItem.questionVideo}</div>
-                <div>{dataItem.comments}</div>
+                <pre>{dataItem.comments}</pre>
             </div>
         )
     },
