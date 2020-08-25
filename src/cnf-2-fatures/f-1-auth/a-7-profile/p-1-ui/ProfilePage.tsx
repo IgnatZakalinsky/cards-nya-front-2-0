@@ -36,11 +36,11 @@ const ProfilePage = () => {
             <ProfileStatus first={first}/>
             <ProfileContainer/>
 
-            <div>
-                <ButtonNya onClick={get}>get users</ButtonNya>
-                <ButtonNya onClick={send}>send message</ButtonNya>
-                <ButtonNya onClick={getMessages}>get messages</ButtonNya>
-            </div>
+            {/*<div>*/}
+            {/*    <ButtonNya onClick={get}>get users</ButtonNya>*/}
+            {/*    <ButtonNya onClick={send}>send message</ButtonNya>*/}
+            {/*    <ButtonNya onClick={getMessages}>get messages</ButtonNya>*/}
+            {/*</div>*/}
         </div>
     );
 };
