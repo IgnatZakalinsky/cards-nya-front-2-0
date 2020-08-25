@@ -19,11 +19,10 @@ export const PacksAPI = {
 
         return response.data;
     },
-    addPack: async (token: string) => {
-        const response = await instance.post<any>(`/cards/pack`, {
-            token,
+    addPack: async () => {
+        const response = await instance.post<any>("/cards/pack", {
             cardsPack: {
-                deckCover: 'some cover'
+                name: "new pack 2.0",
             }
         });
 
