@@ -9,36 +9,18 @@ import {getPacks} from "./getPacksThunk";
 export const updatePack = (id: string): ThunkAction<ReturnVoid, AppStoreType, ExtraArgumentNya, ProfileActionsType> =>
     async (
         dispatch: ThunkDispatch<AppStoreType, ExtraArgumentNya, ProfileActionsType>,
-        getStore: GetAppStoreType
+        // getStore: GetAppStoreType
     ) => {
-        // nekoClear(dispatch);
-        // signInLoading(dispatch, true);
         // dispatch(RegisterActions.setLoading(true));
-
-        const token = "";
 
         await tryCatch(
             async () => {
 
-                const data = await PacksAPI.updatePack(token, id);
+                const data = await PacksAPI.updatePack(id);
+                // dispatch(RegisterActions.setSuccess(true));
+                dispatch(getPacks());
 
-                if (data.error) {
-                    // dispatch(RegisterActions.setError(data.error));
-
-                    DEV_VERSION && console.log('Nya, updatePack Error!', data);
-
-                } else {
-                    // setCookie('token', data.token, Math.floor(data.tokenDeathTime / 1000) - 180);
-
-                    // dispatch(nekoSetName(data.name));
-                    // signInSuccess(dispatch, true);
-                    // dispatch(RegisterActions.setSuccess(true));
-                    // dispatch(ProfileActions.setToken(data.token));
-                    dispatch(getPacks());
-
-                    DEV_VERSION && console.log('Nya, updatePack Success!', data)
-                }
-
+                DEV_VERSION && console.log("Nya, updatePack Success!", data)
             },
             (e) => {
                 // dispatch(RegisterActions.setError(e))

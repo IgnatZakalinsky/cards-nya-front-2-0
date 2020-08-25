@@ -17,7 +17,7 @@ export const PacksAPI = {
             // + `&packName=o`
             // + `&min=2`
             // + `&max=2`
-            + `&sortPacks=0cardsCount`
+            + `&sortPacks=0updated`
         );
 
         return response.data;
@@ -31,12 +31,12 @@ export const PacksAPI = {
 
         return response.data;
     },
-    updatePack: async (token: string, id: string) => {
-        const response = await instance.put<any>(`/cards/pack`, {
-            token,
+    updatePack: async (id: string) => {
+        const response = await instance.put<any>("/cards/pack", {
             cardsPack: {
                 _id: id,
-                name: 'update new',
+                name: "update new pack 2.0",
+                deckCover: "",
             }
         });
 

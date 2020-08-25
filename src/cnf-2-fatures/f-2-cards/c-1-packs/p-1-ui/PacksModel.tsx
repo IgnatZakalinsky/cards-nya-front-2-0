@@ -22,11 +22,21 @@ export const packsModel = (
     },
     {
         title: (index, loading) => (
-            <div key={"grade-title-" + index} style={{width: 150}}>cardsCount</div>
+            <div key={"cardsCount-title-" + index} style={{width: 150}}>cardsCount</div>
         ),
         render: (dataItem: PackType, modelIndex, dataIndex, loading) => (
-            <div key={"grade-cell-" + dataItem._id} style={{width: 150}}>
+            <div key={"cardsCount-cell-" + dataItem._id} style={{width: 150}}>
                 {dataItem.cardsCount}
+            </div>
+        )
+    },
+    {
+        title: (index, loading) => (
+            <div key={"updated-title-" + index} style={{width: 150}}>updated</div>
+        ),
+        render: (dataItem: PackType, modelIndex, dataIndex, loading) => (
+            <div key={"updated-cell-" + dataItem._id} style={{width: 150}}>
+                {dataItem.updated.slice(5, 16)}
             </div>
         )
     },
