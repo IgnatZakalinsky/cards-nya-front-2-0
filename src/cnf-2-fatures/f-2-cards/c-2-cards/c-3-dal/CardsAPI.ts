@@ -18,14 +18,13 @@ export const CardsAPI = {
 
         return response.data;
     },
-    addCard: async (token: string, cardsPack_id: string) => {
-        const response = await instance.post<any>(`/cards/card`, {
-            token,
+    addCard: async (cardsPack_id: string) => {
+        const response = await instance.post<any>("/cards/card", {
             card: {
                 cardsPack_id,
-                question: 'new!',
+                question: "new 2.0!",
                 grade: Math.random() * 5,
-                questionImg: 'some img'
+                questionImg: "some img",
             },
         });
 

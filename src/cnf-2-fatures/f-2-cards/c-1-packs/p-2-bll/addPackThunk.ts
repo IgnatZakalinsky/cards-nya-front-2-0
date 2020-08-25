@@ -1,9 +1,9 @@
 import {ThunkAction, ThunkDispatch} from "redux-thunk";
 import {AppStoreType} from "../../../../cnf-1-main/m-2-bll/store";
-import {ExtraArgumentNya, GetAppStoreType, ReturnVoid, tryCatch} from "../../../../cnf-1-main/m-2-bll/thunks";
+import {ExtraArgumentNya, ReturnVoid, tryCatch} from "../../../../cnf-1-main/m-2-bll/thunks";
 import {DEV_VERSION} from "../../../../config";
 import {PacksAPI} from "../p-3-dal/PacksAPI";
-import {ProfileActions, ProfileActionsType} from "../../../f-1-auth/a-7-profile/p-2-bll/ProfileActions";
+import {ProfileActionsType} from "../../../f-1-auth/a-7-profile/p-2-bll/ProfileActions";
 import {getPacks} from "./getPacksThunk";
 
 export const addPack = (): ThunkAction<ReturnVoid, AppStoreType, ExtraArgumentNya, ProfileActionsType> =>
@@ -21,9 +21,7 @@ export const addPack = (): ThunkAction<ReturnVoid, AppStoreType, ExtraArgumentNy
                 // dispatch(RegisterActions.setSuccess(true));
                 dispatch(getPacks());
 
-                DEV_VERSION && console.log("Nya, addPack Success!", data)
-
-
+                DEV_VERSION && console.log("Nya, addPack Success!", data);
             },
             (e) => {
                 // dispatch(RegisterActions.setError(e))
