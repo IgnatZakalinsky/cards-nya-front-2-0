@@ -1,48 +1,31 @@
 import {ThunkAction, ThunkDispatch} from "redux-thunk";
 import {AppStoreType} from "../../../../cnf-1-main/m-2-bll/store";
-import {ExtraArgumentNya, GetAppStoreType, ReturnVoid, tryCatch} from "../../../../cnf-1-main/m-2-bll/thunks";
+import {ExtraArgumentNya, ReturnVoid, tryCatch} from "../../../../cnf-1-main/m-2-bll/thunks";
 import {DEV_VERSION} from "../../../../config";
-import {ProfileActions, ProfileActionsType} from "../../../f-1-auth/a-7-profile/p-2-bll/ProfileActions";
+import {ProfileActionsType} from "../../../f-1-auth/a-7-profile/p-2-bll/ProfileActions";
 import {CardsAPI} from "../c-3-dal/CardsAPI";
 import {getCards} from "./getCardsThunk";
 
-export const deleteCard = (id: string, pack_id: string): ThunkAction<ReturnVoid, AppStoreType, ExtraArgumentNya, ProfileActionsType> =>
-    async (
-        dispatch: ThunkDispatch<AppStoreType, ExtraArgumentNya, ProfileActionsType>,
-        getStore: GetAppStoreType
-    ) => {
-        // nekoClear(dispatch);
-        // signInLoading(dispatch, true);
-        // dispatch(RegisterActions.setLoading(true));
+export const deleteCard = (
+    id: string, pack_id: string
+): ThunkAction<ReturnVoid, AppStoreType, ExtraArgumentNya, ProfileActionsType> => async (
+    dispatch: ThunkDispatch<AppStoreType, ExtraArgumentNya, ProfileActionsType>,
+    // getStore: GetAppStoreType
+) => {
+    // dispatch(RegisterActions.setLoading(true));
 
-        const token = "";
+    await tryCatch(
+        async () => {
 
-        await tryCatch(
-            async () => {
+            const data = await CardsAPI.deleteCard(id);
+            // dispatch(RegisterActions.setSuccess(true));
+            dispatch(getCards(pack_id));
 
-                const data = await CardsAPI.deleteCard(token, id);
-
-                if (data.error) {
-                    // dispatch(RegisterActions.setError(data.error));
-
-                    DEV_VERSION && console.log('Nya, deleteCard Error!', data);
-
-                } else {
-                    // setCookie('token', data.token, Math.floor(data.tokenDeathTime / 1000) - 180);
-
-                    // dispatch(nekoSetName(data.name));
-                    // signInSuccess(dispatch, true);
-                    // dispatch(RegisterActions.setSuccess(true));
-                    // dispatch(ProfileActions.setToken(data.token));
-                    dispatch(getCards(pack_id));
-
-                    DEV_VERSION && console.log('Nya, deleteCard Success!', data)
-                }
-
-            },
-            (e) => {
-                // dispatch(RegisterActions.setError(e))
-            },
-            "deleteCard"
-        );
-    };
+            DEV_VERSION && console.log("Nya, deleteCard Success!", data);
+        },
+        (e) => {
+            // dispatch(RegisterActions.setError(e))
+        },
+        "deleteCard"
+    );
+};

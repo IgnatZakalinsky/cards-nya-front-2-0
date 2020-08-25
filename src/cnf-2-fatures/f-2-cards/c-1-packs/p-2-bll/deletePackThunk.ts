@@ -6,28 +6,29 @@ import {PacksAPI} from "../p-3-dal/PacksAPI";
 import {ProfileActionsType} from "../../../f-1-auth/a-7-profile/p-2-bll/ProfileActions";
 import {getPacks} from "./getPacksThunk";
 
-export const deletePack = (id: string): ThunkAction<ReturnVoid, AppStoreType, ExtraArgumentNya, ProfileActionsType> =>
-    async (
-        dispatch: ThunkDispatch<AppStoreType, ExtraArgumentNya, ProfileActionsType>,
-        // getStore: GetAppStoreType
-    ) => {
-        // dispatch(RegisterActions.setLoading(true));
+export const deletePack = (
+    id: string
+): ThunkAction<ReturnVoid, AppStoreType, ExtraArgumentNya, ProfileActionsType> => async (
+    dispatch: ThunkDispatch<AppStoreType, ExtraArgumentNya, ProfileActionsType>,
+    // getStore: GetAppStoreType
+) => {
+    // dispatch(RegisterActions.setLoading(true));
 
-        await tryCatch(
-            async () => {
+    await tryCatch(
+        async () => {
 
-                const data = await PacksAPI.deletePack(id);
+            const data = await PacksAPI.deletePack(id);
 
-                // dispatch(RegisterActions.setSuccess(true));
-                dispatch(getPacks());
+            // dispatch(RegisterActions.setSuccess(true));
+            dispatch(getPacks());
 
-                DEV_VERSION && console.log("Nya, deletePack Success!", data);
+            DEV_VERSION && console.log("Nya, deletePack Success!", data);
 
 
-            },
-            (e) => {
-                // dispatch(RegisterActions.setError(e))
-            },
-            "deletePack"
-        );
-    };
+        },
+        (e) => {
+            // dispatch(RegisterActions.setError(e))
+        },
+        "deletePack"
+    );
+};

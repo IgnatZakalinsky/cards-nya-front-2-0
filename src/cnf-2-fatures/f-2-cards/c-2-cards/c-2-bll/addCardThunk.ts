@@ -6,25 +6,26 @@ import {ProfileActionsType} from "../../../f-1-auth/a-7-profile/p-2-bll/ProfileA
 import {CardsAPI} from "../c-3-dal/CardsAPI";
 import {getCards} from "./getCardsThunk";
 
-export const addCard = (id: string): ThunkAction<ReturnVoid, AppStoreType, ExtraArgumentNya, ProfileActionsType> =>
-    async (
-        dispatch: ThunkDispatch<AppStoreType, ExtraArgumentNya, ProfileActionsType>,
-        // getStore: GetAppStoreType
-    ) => {
-        // dispatch(RegisterActions.setLoading(true));
+export const addCard = (
+    id: string
+): ThunkAction<ReturnVoid, AppStoreType, ExtraArgumentNya, ProfileActionsType> => async (
+    dispatch: ThunkDispatch<AppStoreType, ExtraArgumentNya, ProfileActionsType>,
+    // getStore: GetAppStoreType
+) => {
+    // dispatch(RegisterActions.setLoading(true));
 
-        await tryCatch(
-            async () => {
+    await tryCatch(
+        async () => {
 
-                const data = await CardsAPI.addCard(id);
-                // dispatch(RegisterActions.setSuccess(true));
-                dispatch(getCards(id));
+            const data = await CardsAPI.addCard(id);
+            // dispatch(RegisterActions.setSuccess(true));
+            dispatch(getCards(id));
 
-                DEV_VERSION && console.log("Nya, addCard Success!", data);
-            },
-            (e) => {
-                // dispatch(RegisterActions.setError(e))
-            },
-            "addCard"
-        );
-    };
+            DEV_VERSION && console.log("Nya, addCard Success!", data);
+        },
+        (e) => {
+            // dispatch(RegisterActions.setError(e))
+        },
+        "addCard"
+    );
+};

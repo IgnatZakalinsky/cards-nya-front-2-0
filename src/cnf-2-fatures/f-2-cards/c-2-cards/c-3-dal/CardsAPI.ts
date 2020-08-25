@@ -42,8 +42,8 @@ export const CardsAPI = {
 
         return response.data;
     },
-    deleteCard: async (token: string, id: string) => {
-        const response = await instance.delete<any>(`/cards/card?token=${token}&id=${id}`);
+    deleteCard: async (id: string) => {
+        const response = await instance.delete<any>(`/cards/card?&id=${id}`);
 
         return response.data;
     },
