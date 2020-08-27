@@ -21,5 +21,9 @@ export const PacksActions = {
         type: "packs/SET_PACKS",
         packs,
     } as const),
+    setPackUser_id: (packUser_id: string) => ({
+        type: "packs/SET_PACK_USER_ID",
+        packUser_id,
+    } as const),
 
 };

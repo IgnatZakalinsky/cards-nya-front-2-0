@@ -10,7 +10,7 @@ export type GetDataType = {
 export const CardsAPI = {
     getCards: async (cardsPack_id: string) => {
         const response = await instance.get<GetDataType>(`/cards/card?cardsPack_id=${cardsPack_id}`
-        // + "&pageCount=2"
+        + "&pageCount=1000"
         // + "&cardQuestion=ne"
         // + "&min=2"
         // + "&max=3"

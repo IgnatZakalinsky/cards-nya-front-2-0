@@ -22,8 +22,12 @@ export type PackType = {
 
 export type PacksStateType = {
     packs: PackType[];
+
+    packUser_id: string;
 }
 
 export const PacksInitState: PacksStateType = {
     packs: [],
+
+    packUser_id: "",
 };

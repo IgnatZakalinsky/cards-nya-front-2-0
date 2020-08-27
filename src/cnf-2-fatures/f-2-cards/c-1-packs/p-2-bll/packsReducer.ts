@@ -10,6 +10,12 @@ export const packsReducer =
                     packs: action.packs,
                 }
             }
+            case "packs/SET_PACK_USER_ID": {
+                return {
+                    ...state,
+                    packUser_id: action.packUser_id,
+                }
+            }
 
             default: {
                 return state
