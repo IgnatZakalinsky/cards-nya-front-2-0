@@ -9,7 +9,7 @@ import {PacksActions, PacksActionsType} from "./PacksActions";
 export const getPacks = (
     //
 ): ThunkAction<ReturnVoid, AppStoreType, ExtraArgumentNya, ProfileActionsType | PacksActionsType> => async (
-    dispatch: ThunkDispatch<AppStoreType, ExtraArgumentNya, ProfileActionsType | PacksActionsType>,
+    dispatch,
     getStore: GetAppStoreType
 ) => {
     // dispatch(RegisterActions.setLoading(true));

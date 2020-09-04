@@ -13,7 +13,7 @@ export const PacksAPI = {
             `/cards/pack?`
             + `pageCount=1000`
             + `&page=4`
-            + (packUser_id ? `&user_id=${packUser_id}` : "")
+            + (packUser_id && `&user_id=${packUser_id}`)
             // + `&packName=o`
             // + `&min=2`
             // + `&max=2`
