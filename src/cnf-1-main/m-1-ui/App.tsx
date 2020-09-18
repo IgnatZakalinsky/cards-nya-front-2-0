@@ -7,7 +7,7 @@ import store from "../m-2-bll/store";
 import {DEV_VERSION} from "../../config";
 
 // add context
-//
+// 1
 const App = () => {
 
     DEV_VERSION && console.log('render App');
