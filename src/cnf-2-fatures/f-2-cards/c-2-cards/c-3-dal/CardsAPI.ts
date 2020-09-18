@@ -35,7 +35,8 @@ export const CardsAPI = {
             card: {
                 _id: id,
                 question: "updated question",
-                answerImg: "some answer img"
+                answerImg: "some answer img",
+                comments: "new com",
             }
         });
 
