@@ -9,6 +9,7 @@ import ProfileStatus from "./ProfileStatus";
 import ProfileContainer from "./ProfileContainer";
 import {AppStoreType} from "../../../../cnf-1-main/m-2-bll/store";
 import {ProfileActions} from "../p-2-bll/ProfileActions";
+import Chat from "./Chat";
 
 const ProfilePage = () => {
     const {success, error} = useSelector((store: AppStoreType) => store.profile);
@@ -35,6 +36,7 @@ const ProfilePage = () => {
             ProfilePage
             <ProfileStatus first={first}/>
             <ProfileContainer/>
+            <Chat/>
 
             {/*<div>*/}
             {/*    <ButtonNya onClick={get}>get users</ButtonNya>*/}
