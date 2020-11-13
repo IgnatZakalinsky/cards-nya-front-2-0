@@ -9,7 +9,7 @@ import ProfileStatus from "./ProfileStatus";
 import ProfileContainer from "./ProfileContainer";
 import {AppStoreType} from "../../../../cnf-1-main/m-2-bll/store";
 import {ProfileActions} from "../p-2-bll/ProfileActions";
-import {instance} from "../../../../cnf-1-main/m-3-dal/instance";
+import Chat from "./Chat";
 
 const ProfilePage = () => {
     const {success, error} = useSelector((store: AppStoreType) => store.profile);
@@ -26,10 +26,7 @@ const ProfilePage = () => {
         }
     }, [first, success, error, dispatch, setFirst]);
 
-    // const get = () => dispatch(getUsers());
-    const get = () => {
-        instance.put('cards/grade', {})
-    }
+    const get = () => dispatch(getUsers());
     const send = () => dispatch(sendGeneralChatMessage());
     const getMessages = () => dispatch(getGeneralChatMessages());
 
@@ -39,9 +36,10 @@ const ProfilePage = () => {
             ProfilePage
             <ProfileStatus first={first}/>
             <ProfileContainer/>
+            <Chat/>
 
             {/*<div>*/}
-                <ButtonNya onClick={get}>get users</ButtonNya>
+            {/*    <ButtonNya onClick={get}>get users</ButtonNya>*/}
             {/*    <ButtonNya onClick={send}>send message</ButtonNya>*/}
             {/*    <ButtonNya onClick={getMessages}>get messages</ButtonNya>*/}
             {/*</div>*/}
