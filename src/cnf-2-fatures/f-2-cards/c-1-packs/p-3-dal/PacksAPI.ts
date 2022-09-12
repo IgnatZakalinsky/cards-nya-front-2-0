@@ -12,7 +12,7 @@ export const PacksAPI = {
         const response = await instance.get<GetDataType>(
             `/cards/pack?`
             + `pageCount=1000`
-            + `&page=4`
+            + `&page=1`
             + (packUser_id && `&user_id=${packUser_id}`)
             // + `&packName=o`
             // + `&min=2`
