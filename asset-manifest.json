@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/cards-nya-front-2-0/static/css/main.c4e421be.chunk.css",
-    "main.js": "/cards-nya-front-2-0/static/js/main.4fe59786.chunk.js",
-    "main.js.map": "/cards-nya-front-2-0/static/js/main.4fe59786.chunk.js.map",
+    "main.css": "/cards-nya-front-2-0/static/css/main.2fce5561.chunk.css",
+    "main.js": "/cards-nya-front-2-0/static/js/main.d311f8d6.chunk.js",
+    "main.js.map": "/cards-nya-front-2-0/static/js/main.d311f8d6.chunk.js.map",
     "runtime-main.js": "/cards-nya-front-2-0/static/js/runtime-main.95cd5734.js",
     "runtime-main.js.map": "/cards-nya-front-2-0/static/js/runtime-main.95cd5734.js.map",
     "static/js/2.c5042f99.chunk.js": "/cards-nya-front-2-0/static/js/2.c5042f99.chunk.js",
     "static/js/2.c5042f99.chunk.js.map": "/cards-nya-front-2-0/static/js/2.c5042f99.chunk.js.map",
     "index.html": "/cards-nya-front-2-0/index.html",
-    "precache-manifest.5d7bcaaaab678a0ac612c525f0167fa4.js": "/cards-nya-front-2-0/precache-manifest.5d7bcaaaab678a0ac612c525f0167fa4.js",
+    "precache-manifest.c60abe6269661bc930cf8215f556550e.js": "/cards-nya-front-2-0/precache-manifest.c60abe6269661bc930cf8215f556550e.js",
     "service-worker.js": "/cards-nya-front-2-0/service-worker.js",
-    "static/css/main.c4e421be.chunk.css.map": "/cards-nya-front-2-0/static/css/main.c4e421be.chunk.css.map",
+    "static/css/main.2fce5561.chunk.css.map": "/cards-nya-front-2-0/static/css/main.2fce5561.chunk.css.map",
     "static/js/2.c5042f99.chunk.js.LICENSE.txt": "/cards-nya-front-2-0/static/js/2.c5042f99.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.95cd5734.js",
     "static/js/2.c5042f99.chunk.js",
-    "static/css/main.c4e421be.chunk.css",
-    "static/js/main.4fe59786.chunk.js"
+    "static/css/main.2fce5561.chunk.css",
+    "static/js/main.d311f8d6.chunk.js"
   ]
 }

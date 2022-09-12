@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "696e649558945c64a5e928b4d241fca2",
+    "revision": "c6b54e4d34436483d915ca9067711366",
     "url": "/cards-nya-front-2-0/index.html"
   },
   {
-    "revision": "bf5478ed1bb036e7c13c",
-    "url": "/cards-nya-front-2-0/static/css/main.c4e421be.chunk.css"
+    "revision": "b97bbb914df8a8dfa83a",
+    "url": "/cards-nya-front-2-0/static/css/main.2fce5561.chunk.css"
   },
   {
     "revision": "3ad6a6ee861cb5cd5016",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/cards-nya-front-2-0/static/js/2.c5042f99.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "bf5478ed1bb036e7c13c",
-    "url": "/cards-nya-front-2-0/static/js/main.4fe59786.chunk.js"
+    "revision": "b97bbb914df8a8dfa83a",
+    "url": "/cards-nya-front-2-0/static/js/main.d311f8d6.chunk.js"
   },
   {
     "revision": "244a8002c23519ce8469",
